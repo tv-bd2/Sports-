@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Player</title>
+
+<script src="https://cdn.jwplayer.com/libraries/KB5zFt7A.js"></script>
+
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    height: 100%;
+    overflow: hidden;
+}
+
+.player-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+}
+
+#jwplayerDiv {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.watermark {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+    z-index: 9999;
+}
+</style>
+</head>
+
+<body>
+
+<div class="player-wrapper">
+    <div class="watermark"> </div>
+    <div id="jwplayerDiv"></div>
+</div>
+
+<script>
+jwplayer("jwplayerDiv").setup({
+    file: "playex.php?m3u8=167575&token=3bb1c9de72c01ee24ba1639ffac96d5c9e4e8ddd25195c3a4cc01aaa5edcfd94&exp=1776900230",
+    image: "https://i.postimg.cc/mD1VCt2C/RS-Live.png",
+    type: "hls",
+    autostart: true,
+    width: "100%",
+    height: "100%",
+    stretching: "uniform",
+    playbackRateControls: [0.5, 0.75, 1, 1.25, 1.5, 2],
+    skin: { name: "netflix" }
+});
+</script>
+
+</body>
+</html>
